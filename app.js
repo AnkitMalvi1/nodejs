@@ -73,3 +73,37 @@ const lodash = require('lodash');
 // const reversed = lodash.reverse(numbers);
 
 // console.log(reversed);
+
+// const readableStream = fs.createReadStream('example.txt', {encoding: 'utf8'});
+
+// readableStream.on('data', (chunk) => {
+//     console.log(chunk);
+// })
+
+// readableStream.on('end', () => {
+//     console.log('Finished reading the file');
+// })
+
+// readableStream.on('error', (err) => {
+//     console.error('Error', err);
+// })
+
+
+// const writableStream = fs.createWriteStream('output2.txt');
+
+// writableStream.write('Hello, World!');
+// writableStream.end();
+
+// writableStream.on('finish', () => {
+//     console.log('Finished writing to the file.');
+// })
+
+
+// const readableStream = fs.createReadStream('example.txt');
+// const writableStream = fs.createWriteStream('example-output.txt');
+
+// readableStream.pipe(writableStream);
+
+// writableStream.on('finish', () => {
+//     console.log('File Copied Successfully.');
+// })
