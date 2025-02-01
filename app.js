@@ -107,3 +107,89 @@ const lodash = require('lodash');
 // writableStream.on('finish', () => {
 //     console.log('File Copied Successfully.');
 // })
+
+
+// const readline = require('readline');
+// const readableStream = fs.createReadStream('example.txt');
+// const rl = readline.createInterface({input: readableStream});
+
+// rl.on('line', (line) => {
+//     console.log('Line: ', line);
+// })
+
+// rl.on('close', () => {
+//     console.log('Finished processing the file');
+// })
+
+
+// fs.mkdir('newDirectory', (err)=>{
+//     if(err)
+//         return console.error('Error creating directory: ', err);
+
+//     console.log('Directory created successfully');
+// })
+
+
+// fs.mkdirSync('newDirectory2');
+// console.log('Directory created successfully');
+
+
+// fs.readdir('./', (err, files) => {
+//     if(err)
+//         return console.error('Error reading directory: ', err);
+
+//     console.log('Directory content', files);
+// })
+
+
+// const files = fs.readdirSync('./');
+// console.log('Directory content', files);
+
+
+// const dirName = 'newDirectory3';
+
+// if(fs.existsSync(dirName))
+//     console.log('Directory already exists');
+// else
+//     console.log('Directory does not exist');
+
+
+// fs.rmdir('newDirectory2', (err) => {
+//     if(err)
+//         return console.error('Error removing directory: ', err);
+    
+//     console.log('Directory removed successfully');
+// })
+
+
+// fs.rm('newDirectory2', {recursive: true}, (err) => {
+//     if(err)
+//         return console.error('Error removing directory: ', err);
+    
+//     console.log('Directory removed successfully');
+// })
+
+
+// fs.rename('folder1', 'folder2', (err) => {
+//     if(err)
+//         return console.error('Error renaming directory: ', err);
+
+//     console.log('Directory renamed successfully!');
+// })
+
+
+// fs.stat('example.txt', (err, stats) => {
+//     if(err)
+//         return console.error(err);
+
+//     console.log('Directory stats: ', stats);
+//     console.log('Is directory: ', stats.isDirectory());
+// })
+
+
+// fs.watch('./', (eventType, filename) => {
+//     console.log(`Event: ${eventType}`);
+//     if(filename)
+//         console.log(`Filename: ${filename}`);
+// })
+
