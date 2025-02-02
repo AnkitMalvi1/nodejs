@@ -1,5 +1,6 @@
 const http = require('http');
 const url = require('url');
+const queryString = require('querystring');
 
 
 // Route Handler
@@ -111,10 +112,28 @@ const server4 = http.createServer((req, res) => {
 });
 
 
+const server5 = http.createServer((req, res) => {
+    if(req.method === 'POST' && req.url === '/submit'){
+        let data = '';
+
+        req.on('data', (chunk) => {
+            data += chunk;
+        })
+
+        req.on('end', () => {
+            const parsedData = queryString.parse(data);
+            res.writeHead(200, {'content-type': 'application/json'});
+            res.end(JSON.stringify({message: 'Form data received', parsedData}));
+        })
+    }
+})
+
+
 const PORT1 = 3001;
 const PORT2 = 3002;
 const PORT3 = 3003;
 const PORT4 = 3004;
+const PORT5 = 3005;
 
 server1.listen(PORT1, () => {
     console.log(`Server is runing on http://localhost:${PORT1}`);
@@ -130,4 +149,8 @@ server3.listen(PORT3, () => {
 
 server4.listen(PORT4, () => {
     console.log(`Server is runing on http://localhost:${PORT4}`);
+})
+
+server5.listen(PORT5, () => {
+    console.log(`Server is runing on http://localhost:${PORT5}`);
 })
